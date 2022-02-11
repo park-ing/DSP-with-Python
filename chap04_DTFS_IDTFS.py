@@ -22,3 +22,21 @@ plt.subplot(2,1,2); plt.stem(n, np.abs(Xk), "green")    # DTFS 계수
 plt.xlabel("k");plt.ylabel("|X(K)|")
 plt.grid();plt.show()
 
+def IDTFS(Xk, N):   # DFS 계수 X(k)와 길이 N으로부터 시퀀스 x(n)을 구하는 역 DFS
+    WN = np.exp(-1j*(2*np.pi/N))    # 복소수 지수항
+    xn = np.zeros(N, dtype="complex64") # DFS 계수, 복소수
+    for i in range(N):
+        sum = 0
+        for j in range(N):
+            sum = sum + Xk[j]*np.power(WN, -i*j)    # 개별 IDTFS 계산
+        xn[i] = sum/N
+    return xn   # 역 DFS 시퀀스 리턴
+
+# IDTFS
+ixn = IDTFS(Xk,N); print("x(n)=", ixn);
+
+plt.subplot(2,1,1); plt.stem(n,np.abs(Xk),"blue");plt.ylabel("|X(K)|")    # 이산주기신호
+plt.grid(); plt.title("IDTFS of DTFS coefficients X(k)")
+plt.subplot(2,1,2); plt.stem(n, ixn, "green")    # DTFS 계수
+plt.xlabel("k");plt.ylabel("x(n)")
+plt.grid();plt.show()
