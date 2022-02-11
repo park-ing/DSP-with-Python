@@ -40,3 +40,5 @@ plt.grid(); plt.title("IDTFS of DTFS coefficients X(k)")
 plt.subplot(2,1,2); plt.stem(n, ixn, "green")    # DTFS 계수
 plt.xlabel("k");plt.ylabel("x(n)")
 plt.grid();plt.show()
+
+
