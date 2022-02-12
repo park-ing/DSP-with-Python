@@ -33,11 +33,11 @@ def IDTFS(Xk, N):   # DFS 계수 X(k)와 길이 N으로부터 시퀀스 x(n)을 
     return xn   # 역 DFS 시퀀스 리턴
 
 # IDTFS
-ixn = IDTFS(Xk,N); print("x(n)=", ixn);
+ixn = IDTFS(Xk,N); print("x(n)=", ixn); # IDTFS
 
-plt.subplot(2,1,1); plt.stem(n,np.abs(Xk),"blue");plt.ylabel("|X(K)|")    # 이산주기신호
+plt.subplot(2,1,1); plt.stem(n,np.abs(Xk),"blue");plt.ylabel("|X(K)|") 
 plt.grid(); plt.title("IDTFS of DTFS coefficients X(k)")
-plt.subplot(2,1,2); plt.stem(n, ixn, "green")    # DTFS 계수
+plt.subplot(2,1,2); plt.stem(n, ixn, "green")   # 복원된 신호    
 plt.xlabel("k");plt.ylabel("x(n)")
 plt.grid();plt.show()
 
