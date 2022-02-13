@@ -7,9 +7,10 @@ n1 = n[0:int(N/2)]
 xn = np.cos(0.48*np.pi*n) + np.cos(0.52*np.pi*n)    # 입력이산신호
 
 Xk = np.fft.fft(xn,N)   # FFT 스펙트럼
-magXk = np.abs(Xk)  # 크기 스펙트럼
 
+magXk = np.abs(Xk)  # 크기 스펙트럼
 magXk1 = magXk[0:int(N/2)]
+
 xnt = np.fft.ifft(Xk)   # 역FFT, 복원된 이산신호
 
 plt.figure(1)
