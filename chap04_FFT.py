@@ -22,3 +22,4 @@ plt.grid();plt.ylabel("|X(k)|")
 plt.subplot(3,1,3); plt.stem(n,xnt,"green")
 plt.grid();plt.ylabel("Reconstructed xr(n)");plt.xlabel("k")
 plt.show()
+
